@@ -19,18 +19,6 @@ export const verifyFirebaseToken = async (req, res) => {
     }
 }
 
-export const deleteAccount = async (req, res) => {
-    try {
-        await authService.deleteAccount(req);
-    } catch (error) {
-        logMessage(error, req);
-        res.status(500).send({
-            status: false,
-            message: await getMessage('common.something_went_wrong'),
-        });
-    }
-}
-
 export const logOut = async (req, res) => {
     try {
         const token = req.headers['x-access-token'];

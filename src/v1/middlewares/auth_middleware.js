@@ -21,7 +21,7 @@ export const authenticationMiddleware = async (req, res, next, model) => {
                 });
             } else {
                 const decoded = await verifyToken(token);
-                const getModel = await modelService.getOneById(db[model], decoded.id);
+                const getModel = await modelService.getOneById(db[model], decoded.id, req);
                 if (getModel != null) {
                     req.user_id = getModel.id
                     next();
@@ -34,7 +34,7 @@ export const authenticationMiddleware = async (req, res, next, model) => {
             }
         }
     } catch (error) {
-        logMessage(req, error);
+        logMessage(error, req);
         return res.status(401).send({
             status: false,
             message: await getMessage('auth.session_expired'),

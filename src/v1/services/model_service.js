@@ -18,7 +18,7 @@ export const getOne = async (Model, data, req = {}) => {
     }
 };
 
-export const getOneById = async (Model, id) => {
+export const getOneById = async (Model, id, req) => {
     try {
         return await Model.findById(id);
     } catch (error) {

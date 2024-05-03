@@ -61,7 +61,7 @@ export const deleteAccount = async (req, res) => {
     }
 }
 
-export const refreshToken = async (req, res) => {
+export const refreshToken = async (token) => {
     try {
         if (await redis.get(`blackListed-${token}`)) {
             return response(401, {

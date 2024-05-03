@@ -53,14 +53,6 @@ export const verifyFirebaseToken = async (req, res, model) => {
     }
 }
 
-export const deleteAccount = async (req, res) => {
-    try {
-
-    } catch (error) {
-        throw error;
-    }
-}
-
 export const refreshToken = async (token) => {
     try {
         if (await redis.get(`blackListed-${token}`)) {

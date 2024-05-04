@@ -1,11 +1,16 @@
 import winston from "winston";
 import 'winston-daily-rotate-file';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 let currentLogLevel = "error";
 
 const fileRotateTransport = new winston.transports.DailyRotateFile({
     level: currentLogLevel,
-    filename: 'logs/log-%DATE%.log',
+    filename: `${__dirname}/../../../logs/log-%DATE%.log`,
     datePattern: 'YYYY-MM-DD',
     // maxFiles: null, // or set a large value to avoid rotation based on file count
     maxFiles: '28d',

@@ -25,7 +25,7 @@ export default sendEmail = async (template, subject, data) => {
             });
         }
         // Render HTML based on a pug template
-        const html = pug.renderFile(path.join(__dirname, `./../views/emails/${template}.pug`), data);
+        const html = pug.renderFile(path.join(__dirname, `./../../views/emails/${template}.pug`), data);
 
         // Define email options
         const emailOptions = {

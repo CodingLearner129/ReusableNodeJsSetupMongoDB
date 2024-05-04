@@ -4,6 +4,7 @@ import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
 import { config } from "./config.js";
+import { logMessage } from "../helpers/logger.js";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 mongoose.set("strictQuery", true);
@@ -42,6 +43,7 @@ try {
         }
     }));
 } catch (error) {
+    logMessage(error);
     console.log(error.name + "💥 : " + error.message);
 }
 export default db;

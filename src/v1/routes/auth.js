@@ -10,7 +10,6 @@ router.post("/refresh", [], authController.refreshToken);
 
 router.use((req, res, next) => authenticationMiddleware(req, res, next, 'user'));
 
-router.delete("/verify_firebase_otp_token", [authRequest.verifyFirebaseTokenRequest], authController.deleteAccount);
 router.get("/logout", [], authController.logOut);
 
 export { router };

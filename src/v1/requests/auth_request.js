@@ -20,7 +20,7 @@ export const verifyFirebaseTokenRequest = async (req, res, next) => {
             'country_code.required': await getMessage('validation.country_code.required'),
             'country_code.string': await getMessage('validation.country_code.string'),
             'phone.required': await getMessage('validation.phone.required'),
-            'phone.string': await getMessage('validation.phone.integer'),
+            'phone.integer': await getMessage('validation.phone.integer'),
             'phone.minLength': await getMessage('validation.phone.minLength'),
             'phone.maxLength': await getMessage('validation.phone.maxLength'),
             'token.required': await getMessage('validation.token.required'),

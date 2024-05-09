@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { promisify } from "util";
+import mongoose from 'mongoose';
 import db from "./../config/db.js";
 import getMessage from "../helpers/getMessage.js";
 import { logMessage } from "../helpers/logger.js";
@@ -22,7 +23,7 @@ export const verifyToken = async (token) => {
 };
 
 export const verifyFirebaseToken = async (req, res, model) => {
-    const transaction = await db[model].startSession();
+    const transaction = await mongoose.startSession();
     transaction.startTransaction();
     try {
         const { country_code, phone, token, firebase_token } = req.body;

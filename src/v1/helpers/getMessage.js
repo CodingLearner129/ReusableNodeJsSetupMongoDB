@@ -41,7 +41,6 @@ const getMessage = async (key = null, replace = {}, locale = config.locale) => {
         return '';
     }
 
-    // return await getTranslation(keys, file);
     let message = await getTranslation(keys, file);
 
     // Replace placeholders in the message

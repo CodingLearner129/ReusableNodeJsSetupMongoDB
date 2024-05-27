@@ -17,7 +17,7 @@ config.bcrypt_salt_round = process.env.BCRYPT_SALT_ROUND || 10;
 config.locale = process.env.LOCALE || 'en';
 
 //** set rate limit */
-config.rate_limit = process.env.RATE_LIMIT || '10kb';
+config.request_data_limit = process.env.REQUEST_DATA_LIMIT || '10kb';
 
 //** Jwt */
 config.jwt_encryption = process.env.JWT_ENCRYPTION || 'secret';

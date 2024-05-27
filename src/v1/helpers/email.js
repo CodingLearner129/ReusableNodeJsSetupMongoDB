@@ -21,7 +21,8 @@ export default sendEmail = async (template, subject, data) => {
                 auth: {
                     user: config.mail_username,
                     pass: config.mail_password,
-                }
+                },
+                secure: config.mail_secure
             });
         }
         // Render HTML based on a pug template
@@ -54,7 +55,8 @@ export class Email {
                 auth: {
                     user: config.mail_username,
                     pass: config.mail_password,
-                }
+                },
+                secure: config.mail_secure
             });
         }
         // Return this instance for consistency

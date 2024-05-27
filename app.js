@@ -6,6 +6,7 @@ import compression from "compression";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import path from 'path';
+import { config } from "./src/v1/config/config.js";
 // import db from './src/v1/config/db.js';
 import { router as routerV1 } from "./src/v1/routes/index.js";
 
@@ -23,8 +24,8 @@ app.use(morgan('dev'));
 
 // Body parser, reading data from body into req.body
 // app.use(express.json());
-app.use(express.json({ limit: '10kb' })); // limit to 10kb for requests body so more then 10k data in request body is not allowed
-app.use(express.urlencoded({ extended: true, limit: '10kb' }));
+app.use(express.json({ limit: config.request_data_limit })); // limit to 10kb for requests body so more then 10k data in request body is not allowed
+app.use(express.urlencoded({ extended: true, limit: config.request_data_limit }));
 
 // Data sanitization against request NoSql query injection
 app.use(mongooseSanitize());

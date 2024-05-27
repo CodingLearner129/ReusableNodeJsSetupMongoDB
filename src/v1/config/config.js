@@ -16,6 +16,9 @@ config.bcrypt_salt_round = process.env.BCRYPT_SALT_ROUND || 10;
 //** set locale for language */
 config.locale = process.env.LOCALE || 'en';
 
+//** set rate limit */
+config.rate_limit = process.env.RATE_LIMIT || '10kb';
+
 //** Jwt */
 config.jwt_encryption = process.env.JWT_ENCRYPTION || 'secret';
 config.jwt_expiration = process.env.JWT_EXPIRATION || '1d';
@@ -36,5 +39,5 @@ config.awsRegion = process.env.AWS_DEFAULT_REGION || '';
 config.awsBucket = process.env.AWS_BUCKET || '';
 config.awsUrl = process.env.AWS_URL || '';
 
-config.CLOUDFRONT_BASE_URL = process.env.CLOUDFRONT_BASE_URL || '';
-config.AWS_USE_PATH_STYLE_ENDPOINT = process.env.AWS_USE_PATH_STYLE_ENDPOINT || '';
+config.cloudfrontBaseUrl = process.env.CLOUDFRONT_BASE_URL || '';
+config.awsUsePathStyleEndpoint = process.env.AWS_USE_PATH_STYLE_ENDPOINT || '';

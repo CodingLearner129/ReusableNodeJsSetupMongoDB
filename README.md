@@ -18,7 +18,7 @@ Before you begin, ensure you have met the following requirements:
 
 -   [Node.js](https://nodejs.org) (^20.9.0)
 -   [npm](https://www.npmjs.com) (^10.1.0)
--   [Database](#configure-database) (MySQL)
+-   [Database](#configure-database) (MongoDB)
 
 ## Getting Started
 
